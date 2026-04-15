@@ -1,4 +1,4 @@
-## qa-automacao-front-end (Atividade)
+## QA-automacao-front-end (Atividade)
 
 Projeto final da Unidade testes de automação-Front End
 
