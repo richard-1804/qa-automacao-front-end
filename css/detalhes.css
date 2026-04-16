@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+
+.background {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    clip-path: ellipse(100% 75% at 50% 0%);
+}
+
+.titulo {
+    background-color: var(--azul-escuro);
+    width: 100%;
+    height: 60px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#icone-bandeira {
+    width: 60px;
+    height: 60px;
+    cursor: default;
+    transition: 300ms ease
+}
+
+#icone-bandeira:hover{
+    rotate: 5deg;
+    transform: scale(1.1);
+    translate: 0px -2px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sen", sans-serif;
+}
+
+body {
+    /* background-image:  */
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 250px;
+    gap: 25px;
+    flex: 1;
+}
+
+#voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #001e3b;
+    text-align: center;
+    font-size: 30px;
+    
+    margin-top: -100px;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+}
+
+#input-pais {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #001e3d;
+}
+
+.btn-geog {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #001e3d;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--azul-escuro);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 500;
+}
+/* AQUI É UMA ÁREA DEDICADA AO Detalhes.html */
+
+.title{
+display: flex;
+align-items: center;
+text-align: center;
+}
+

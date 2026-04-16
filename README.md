@@ -9,8 +9,8 @@ Projeto final da Unidade testes de automação-Front End
 - João Pedro Fagundes Ernesto
 - Luca Mendes Azevedo
 - Mateus Chaves
-- Saulo Farías
+- Saulo Farias
 
 ## Docente:
 
-Jessica Arnat Prado Machado
+Jessica Arnaut Prado Machado
