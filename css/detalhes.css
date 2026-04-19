@@ -1,11 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 
 
-.background {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    clip-path: ellipse(100% 75% at 50% 0%);
+:root {
+    --azul-escuro: #021232;
+    --azul-claro: #10D9E3;
+    --cor-secundaria: #FFFFFF;
+
+    --botao-explorar-gradiente2: #0b87e9;
+    --botao-explorar-gradiente1: #0f5adf;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sen", sans-serif;
+}
+
+.texto-principal h1 {
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.texto-principal p {
+    color: #ffffff;
+    max-width: 550px;
+}
+
+main {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo {
@@ -30,60 +56,91 @@
     rotate: 5deg;
     transform: scale(1.1);
     translate: 0px -2px;
-
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Sen", sans-serif;
-}
-
-body {
-    /* background-image:  */
-
+ul{
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+    list-style-type: none;
+    gap: 15px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 250px;
-    gap: 25px;
-    flex: 1;
-}
-
-#voltar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
+nav li a {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #001e3b;
-    text-align: center;
-    font-size: 30px;
-    
-    margin-top: -100px;
-    padding: 10px;
+.active {
+    border-bottom: 2px solid white;
 }
 
-.container {
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    display: block;
+    transition: 300ms ease
+}
+
+.principal {
+    position: relative;
+    height: 400px;
+}
+
+.fundo {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    clip-path: ellipse(100% 75% at 50% 0%);
+}
+
+.texto-principal {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 10;
+}
+.texto-principal h1 {
+   font-size: 50px;
+}
+
+.texto-principal h1, .texto-principal{
+   margin-bottom: 12px;
+}
+.principal b {
+    color: var(--azul-claro);
+    font-weight: 700;
+}
+
+.conteudo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.container { 
+    background-color: var(--cor-secundaria);
+    color: var(--azul-escuro);
+    max-width: 250px;
+    margin-top: 50px;
+    
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    box-shadow: 5px 5px 5px grey;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
+
 }
 
 #input-pais {
@@ -106,6 +163,69 @@ main {
     gap: 15px;
 }
 
+a, a:hover {
+    text-decoration: none;
+}
+.text-container {
+    color: black;
+    padding: 10px 10px 8px 10px;
+    font-size: 18px;
+}
+
+.text-container h3 {
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.text-container p {
+    margin: 10px 0;
+}
+
+.banner img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.explore {
+    color: white;
+    background: linear-gradient(90deg, var(--botao-explorar-gradiente1),var(--botao-explorar-gradiente2));
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 20px;
+    padding: 10px 12px;
+    margin: 0 0 8px 15px;
+    width: 67%;
+
+    transition: 300ms ease;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.explore:hover {
+    background: var(--cor-secundaria);
+    color: var(--azul-escuro);
+    border: 2px solid var(--botao-explorar-gradiente1);
+}
+
+.explore:hover #seta {
+    fill: var(--azul-escuro);
+}
+
+#seta{
+  margin-left: 30px;
+}
+
+.cards {
+    max-width: 700px;
+    height: 150px;
+    border: 2px solid black;
+    background-color: var(--cor-secundaria);
+}
+
 footer {
     position: fixed;
     width: 100%;
@@ -116,11 +236,3 @@ footer {
     padding: 15px 0;
     font-weight: 500;
 }
-/* AQUI É UMA ÁREA DEDICADA AO Detalhes.html */
-
-.title{
-display: flex;
-align-items: center;
-text-align: center;
-}
-
