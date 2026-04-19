@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/detalhes.css">
+    <link rel="stylesheet" href="../css/detalhes.css">
     <title>Projeto Final | QA e Automação</title>
 </head>
 <body>
@@ -11,39 +11,51 @@
     <header class="titulo">
 
         <div class="logo">
-            <img src="Img/logo-inovatech.png" alt="Logo da InovaTech">
-            <img id='icone-bandeira'src="Img/icone-bandeira.png" alt="Logo da bandeira" >
+            <img src="../Img/logo-inovatech.png" alt="Logo da InovaTech">
+            <img id='icone-bandeira' src="../Img/icone-bandeira.png" alt="Logo da bandeira" >
         </div>
         
        <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/detalhes.html">Detalhes</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/detalhes.html" class="active">Detalhes</a></li>
             </ul>
       </nav>
 
-
     </header>
 
-  <main>
-       <img class='background' src="Img/globo.png" alt="mundo conectado">
-       
-       
+    <main>
 
-        <header class="title">
-            <h1>Dados Geograficos</h1>
-        </header>
+       <article class="principal">
+            <img class='fundo' src="../Img/globo.png" alt="mundo conectado">
+            <div class="texto-principal">
+                <h1>Consulta de  <br> <b>Dados </b> Geográficos</h1>
+                
+                <p>Tenha o mundo ao seu alcance com nossa plataforma de consulta global. Aqui, você obtém dados técnicos e geográficos detalhados de qualquer nação em poucos cliques, utilizando um sistema otimizado para uma navegação fluida e precisa.</p>
+            </div>
+       </article>
 
-        <article class="container">
+       <article class="conteudo">
+        
+        <div class="resultado">resultado aqui</div>
+
+           <section class="container">
+               
+            <h2>país</h2>
             
             <input type="text" placeholder="Digite nome de um país" id="input-pais">
             <button class="btn-geog" onclick="BuscarPaís()">buscar país</button>
             
-            <div class="resultado"></div>
-        </article>
+        </section>
         
+        <div class="resultado">resultado aqui</div>
+
+        </article>
+
     </main>
 
-    <footer>InovaTech<sup>&reg;</sup> 2026. Todos os direitos reservados.</footer>
+     <footer>InovaTech<sup>&reg;</sup> 2026. Todos os direitos reservados.</footer>
+     
+    <script src="javascript/script.js"></script>
 
 </body>
