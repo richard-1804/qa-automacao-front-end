@@ -1,52 +1,66 @@
 async function BuscarPaís() {
-    var nome = document.getElementById("input-pais").value;
-    var div1 = document.querySelector('.resultado-1');
-    var div2 = document.querySelector('.resultado-2');
-    var div3 = document.querySelector('.resultado-3');
-    var divError = document.querySelector('.msg-error');
+    const nome = document.getElementById("input-pais").value;
+    const div1 = document.querySelector('.resultado-1');
+    const div2 = document.querySelector('.resultado-2');
+    const div3 = document.querySelector('.resultado-3');
+    const divError = document.querySelector('.msg-error');
+    const botao = document.querySelector('.btn-geog');
 
-           
+    // Validação simples: evita buscar se o input estiver vazio
+    if (!nome) {
+        divError.innerHTML = "Por favor, digite o nome de um país.";
+        return;
+    }
+
+    // Limpa estados anteriores e prepara a UI
+    divError.innerHTML = "";
     div1.innerHTML = "Carregando...";
     div2.innerHTML = "Carregando...";
+    div3.innerHTML = "";
+    botao.disabled = true;
 
-await fetch("https://restcountries.com/v3.1/name/" + nome)
-    .then(function(resposta) {
-        if (resposta.ok) {
-            return resposta.json();
-        } else {
-            divError.innerHTML = "Erro ao buscar país";
-            div1.innerHTML = "";
-            div2.innerHTML = "";
+    try {
+        // CORREÇÃO: Aspas e protocolo completo na URL
+        const resposta = await fetch(`https://restcountries.com/v3.1/name/${nome}`);
+
+        if (!resposta.ok) {
+            throw new Error("País não encontrado");
         }
-    })
-    .then(function(dados) {
-        var pais = dados[0];
 
-        var conteudo1 = "<strong><p>" + pais.name.common + "</strong></p>";
+        const dados = await resposta.json();
 
-        conteudo1 += "<p><strong>Capital:</strong> " + pais.capital + "</p>";
+        if (!dados || dados.length === 0) {
+            throw new Error("Sem dados");
+        }
 
-        conteudo1 += "<p><strong>Região:</strong> " + pais.region + "</p>";
+        const pais = dados[0];
 
-        conteudo1 += "<p><strong>População:</strong> " + pais.population + "</p>";
+        // Monta conteúdo da primeira coluna
+        div1.innerHTML = `
+            <p><strong>${pais.name.common}</strong></p>
+            <p><strong>Capital:</strong> ${pais.capital ? pais.capital[0] : 'N/A'}</p>
+            <p><strong>Região:</strong> ${pais.region}</p>
+            <p><strong>População:</strong> ${pais.population.toLocaleString('pt-BR')}</p>
+        `;
 
+        // Monta conteúdo da segunda coluna
+        div2.innerHTML = `
+            <p><strong>Área:</strong> ${pais.area.toLocaleString('pt-BR')} km²</p>
+            <p><strong>Coordenadas:</strong> ${pais.latlng.join(', ')}</p>
+            <p><strong>Sub-região:</strong> ${pais.subregion || 'N/A'}</p>
+            <p><strong>Continente:</strong> ${pais.continents.join(', ')}</p>
+        `;
 
-        var conteudo2 = "<p><strong>Área:</strong> " + pais.area + "</p>";
+        // Exibe a bandeira
+        div3.innerHTML = `<img src="${pais.flags.png}" alt="Bandeira de ${pais.name.common}" width="150">`;
 
-        conteudo2 += "<p><strong>Coordenadas:</strong> " + pais.latlng + "</p>";
-
-        conteudo2 += "<p><strong>Sub-região:</strong> " + pais.subregion + "</p>";
-
-        conteudo2 += "<p><strong>Continente:</strong> " + pais.continents + "</p>";
-
-
-        var bandeira = "<img src='" + pais.flags.png + "' width='150'>";
-
-        div1.innerHTML = conteudo1;
-        div2.innerHTML = conteudo2;
-        div3.innerHTML = bandeira
-    })
-    .catch(function(erro) {
-        divError.innerHTML = "Erro ao buscar país";
-    });
+    } catch (erro) {
+        divError.innerHTML = "Erro: " + erro.message;
+        div1.innerHTML = "";
+        div2.innerHTML = "";
+        div3.innerHTML = "";
+    } finally {
+        // Sempre reativa o botão, independente de sucesso ou erro
+        botao.disabled = false;
+    }
 }
