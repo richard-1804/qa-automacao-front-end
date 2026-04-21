@@ -24,7 +24,7 @@ async function BuscarPaís() {
 
         const dados = await resposta.json();
 
-        // Segurança extra
+        // Segurança extra lançando erro
         if (!dados || dados.length === 0) {
             throw new Error("Sem dados");
         }
