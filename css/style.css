@@ -8,6 +8,9 @@
 
     --botao-explorar-gradiente2: #0b87e9;
     --botao-explorar-gradiente1: #0f5adf;
+
+    --titulo-box: #00001C;
+    --titulo-paragrafo: #A2AAB8;
     
 }
 
@@ -75,10 +78,15 @@ nav li a {
     border-bottom: 2px solid white;
 }
 
-.logo {
+.logo, #logo-main{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: 300ms ease;
+}
+
+#logo-main:hover {
+    transform: scale(1.1);
 }
 
 .logo img {
@@ -133,17 +141,50 @@ nav li a {
     border-width: 2px;
     border-color: lightgray;
     box-shadow: 5px 5px 5px grey;
+    transition: 300ms ease;
+
+}
+.box:hover { 
+    background-color: var(--cor-secundaria);
+    color: var(--azul-escuro);
+    max-width: 500px;
+    border-radius: 8px;
+    
+    margin: 0 0 0 100px;
+    
+    border-style: solid;
+    border-width: 2px;
+    transition: 3.0;
 
 }
 
+.conteudo-bloco {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 85px 85px;
+    gap: 30px 30px;
+    margin: 50px 0 0 50px;
+    height: 100%;
+}
+
 .bloco {
-    background-color: #0f5adf;
+    background-color: var(--cor-secundaria);
     display: flex;
-    gap: 20px;
-    height: 80px;
-    width: 500px;
     border-radius: 10px;
     align-items: center;
+    border: 2px solid lightgray;
+    box-shadow: 5px 5px 5px grey;
+    transition: 300ms ease;
+}
+
+.bloco:hover, .box:hover {
+    transform: scale(1.05);
+    border-color: rgb(49, 46, 46);
+    box-shadow: 5px 5px 5px Slategrey;
+}
+
+.texto-bloco h3, p {
+    color: var(--titulo-box);
 }
 
 .bloco img{
@@ -177,7 +218,7 @@ a, a:hover {
 }
 
 .explore {
-    color: white;
+    color: var(--cor-secundaria);
     background: linear-gradient(90deg, var(--botao-explorar-gradiente1),var(--botao-explorar-gradiente2));
 
     display: flex;
@@ -193,10 +234,18 @@ a, a:hover {
     border: 2px solid var(--cor-secundaria);
 }
 
+.explore p {
+    color: white;
+}
+
 .explore:hover {
     background: var(--cor-secundaria);
     color: var(--azul-escuro);
     border: 2px solid var(--botao-explorar-gradiente1);
+}
+
+.explore:hover p {
+    color: var(--azul-escuro);
 }
 
 .explore:hover #seta {

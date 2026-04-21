@@ -8,6 +8,9 @@
 
     --botao-explorar-gradiente2: #0b87e9;
     --botao-explorar-gradiente1: #0f5adf;
+
+    --titulo-box: #00001C;
+    --titulo-paragrafo: #A2AAB8;
     
 }
 
@@ -75,10 +78,15 @@ nav li a {
     border-bottom: 2px solid white;
 }
 
-.logo {
+.logo, #logo-main{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: 300ms ease;
+}
+
+#logo-main:hover {
+    transform: scale(1.1);
 }
 
 .logo img {
@@ -118,49 +126,83 @@ nav li a {
 }
 
 .conteudo {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 40px;
 }
 
 .container { 
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria); 
     color: var(--azul-escuro);
-    max-width: 250px;
-    margin-top: 50px;
-    
     border-radius: 8px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: lightgray;
-    box-shadow: 5px 5px 5px grey;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
 
+.container h2 {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+
+.btn-geog, #input-pais {
+    width: 100%;
+}
+
+#input-pais input::placeholder {
+    color: var(--titulo-box);
 }
 
 #input-pais {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
     border-radius: 5px;
     border: 1px solid #001e3d;
+    font-size: 18px;
+    cursor: text;
 }
 
 .btn-geog {
+    color: var(--titulo-box);
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid #001e3d;
+    cursor: pointer;
+}
+.btn-geog:hover {
+    transition-duration: .3s;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #001e3d;
+    color: white;
+    border-radius: 5px;
+    border: 1.5px solid rgb(62, 86, 109);
+    cursor: pointer;
 }
 
-.resultado {
+.resultado-1, .resultado-2 {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
+}
+
+.resultado-3 {
+    border: 2px solid var(--azul-escuro);
+}
+
+.msg-error {
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 a, a:hover {
@@ -211,12 +253,12 @@ a, a:hover {
     border: 2px solid var(--botao-explorar-gradiente1);
 }
 
-.explore:hover #seta {
+.voltar:hover #seta {
     fill: var(--azul-escuro);
 }
 
 #seta{
-  margin-left: 30px;
+  rotate: 180deg;
 }
 
 .cards {
@@ -224,6 +266,35 @@ a, a:hover {
     height: 150px;
     border: 2px solid black;
     background-color: var(--cor-secundaria);
+}
+
+.voltar {
+    color: var(--cor-secundaria);
+    background: linear-gradient(90deg, var(--botao-explorar-gradiente1),var(--botao-explorar-gradiente2));
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    border-radius: 20px;
+    padding: 10px 12px;
+    margin: 0 0 8px 15px;
+    width: 200px;
+
+    transition: 300ms ease;
+    border: 2px solid var(--cor-secundaria);
+
+    cursor: pointer;
+}
+
+.voltar:hover {
+    border: 2px solid var(--azul-escuro);
+    background: white;
+}
+
+.voltar:hover p {
+    color: var(--azul-escuro)
 }
 
 footer {
