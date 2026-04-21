@@ -1,5 +1,4 @@
 async function BuscarPaís() {
-<<<<<<< Eloah
     const nome = document.getElementById("input-pais").value;
     const div1 = document.querySelector('.resultado-1');
     const div2 = document.querySelector('.resultado-2');
@@ -114,4 +113,4 @@ await fetch("https://restcountries.com/v3.1/name/" + nome)
         divError.innerHTML = "Erro ao buscar país";
     });
 }
->>>>>>> main
+
