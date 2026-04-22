@@ -8,8 +8,8 @@ Cenário: Navegar da Home para a página de detalhes
 
 
   Dado que o usuário está na página Home
-  E rola a página até o botão "Explore os dados dos países"
-  Quando ele clica no botão 
+  E vai para o menu 
+  Quando ele clica no botão "Detalhes"
   Então ele deve ser redirecionado para a página de detalhes
   E a URL deve conter "pages/detalhes.html"
 
@@ -30,6 +30,6 @@ Cenário: Exibir mensagem de erro ao não encontrar resultados
 
 
   Dado que o usuário está na página Detalhes
-  Quando ele preenche o campo de input com um termo em português
+  Quando ele preenche o campo de input com um nome que não é um país
   Então uma mensagem de erro deve ser exibida
   E nenhum resultado da API deve ser exibido na tela
