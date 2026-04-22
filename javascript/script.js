@@ -39,7 +39,7 @@ async function BuscarPaís() {
 
         // Monta conteúdo da primeira coluna
         div1.innerHTML = `
-            <p><strong>${pais.name.common}</strong></p>
+            <p><strong>País:</strong> ${pais.name.common}</p>
             <p><strong>Capital:</strong> ${pais.capital ? pais.capital[0] : 'N/A'}</p>
             <p><strong>Região:</strong> ${pais.region}</p>
             <p><strong>População:</strong> ${pais.population.toLocaleString('pt-BR')}</p>
