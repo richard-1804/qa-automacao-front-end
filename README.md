@@ -40,4 +40,5 @@ A segunda tela apresenta a parte mais caracteristica do site, contendo informaç
 ## 🛠️ Testes em Cypress:
 
 Para a testagem do site utilizamos o Cypress, que é uma ferramenta de testes automatizados para sites e sistemas web. Ele funciona simulando o comportamento de um usuário real no navegador, como abrir páginas, clicar em botões, digitar textos e verificar se algo aparece na tela. Você escreve esses passos em forma de código, e o Cypress executa tudo automaticamente para conferir se a aplicação está funcionando corretamente. Ele roda diretamente no navegador, o que torna os testes mais rápidos e confiáveis, além de conseguir acessar elementos da página, esperar carregamentos e identificar erros.
-No caso do nosso site, os testes via Cypress foram de alta utilidade testando a maioria dos botões na interface inicial e sistemas de interatividade como hover e mudança de cor com passagem de cursor, e também com a responsividade dos botões para mudança de página.
+
+No caso do nosso site, os testes via Cypress foram de alta utilidade testando a maioria dos botões na interface inicial e sistemas de interatividade como hover, mudança de cor com passagem de cursor, e a responsividade dos botões para mudança de página.
