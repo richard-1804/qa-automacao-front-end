@@ -127,6 +127,7 @@ nav li a {
 
 .conteudo {
     display: flex;
+    margin-bottom: 40px;
 }
 
 .box { 
@@ -264,6 +265,7 @@ a, a:hover {
 }
 
 footer {
+    position: fixed;
     width: 100%;
     bottom: 0;
     background-color: var(--azul-escuro);
